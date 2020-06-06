@@ -5,8 +5,8 @@ This application was built with the purpose of:
 - Learn TypeScript (a bit)
 
 Tasks:
-- [ ] List fixed TODOs in page
-- [ ] Add TODOs
+- [x] List fixed TODOs in page
+- [x] Add TODOs
 - [ ] Mark TODO as done
 - [ ] Remove TODOs
 - [ ] Persist in storage
