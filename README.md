@@ -7,6 +7,7 @@ This application was built with the purpose of:
 Tasks:
 - [ ] List fixed TODOs in page
 - [ ] Add TODOs
+- [ ] Mark TODO as done
 - [ ] Remove TODOs
 - [ ] Persist in storage
 - [ ] Improve UI
