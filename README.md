@@ -8,6 +8,6 @@ Tasks:
 - [x] List fixed TODOs in page
 - [x] Add TODOs
 - [ ] Mark TODO as done
-- [ ] Remove TODOs
+- [x] Remove TODOs
 - [ ] Persist in storage
 - [ ] Improve UI

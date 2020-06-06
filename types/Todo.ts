@@ -1,3 +1,4 @@
 export type Todo = {
-  text: string
+  text: string,
+  uuid: string,
 }

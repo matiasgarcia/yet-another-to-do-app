@@ -1,20 +1,34 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Todo } from '../types/Todo';
 
 type Props = {
   todoList: Array<Todo>
+  onRemove: (todoUuid: string) => void
 }
 
-export function TodoList({ todoList }: Props) {
+export function TodoList({ todoList, onRemove }: Props) {
   return (
     <View>
       {
-        // TODO: Using index as the key will have problems. Fix this later.
-        todoList.map((todo, index) => (
-          <Text key={index}>{'\u2B24'} {todo.text}</Text>
+        todoList.map((todo) => (
+          <View style={style.container}>
+            <Text key={todo.uuid}>
+              {'\u2B24'} {todo.text}
+            </Text>
+            <Text>{' '}</Text>
+            <Text onPress={() => onRemove(todo.uuid)}>
+              {'\u274C'}
+            </Text>
+          </View>
         ))
       }
     </View>
   );
 }
+
+const style = StyleSheet.create({
+  container: {
+    flexDirection: 'row'
+  }
+})
