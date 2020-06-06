@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { TodoList } from '../components/TodoList';
 import { View } from 'react-native';
 import { TodoInput } from '../components/TodoInput';

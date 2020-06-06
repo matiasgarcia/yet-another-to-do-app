@@ -1,12 +1,9 @@
-import React, { useReducer } from 'react';
+import { useReducer } from 'react';
 import { Todo } from '../../types/Todo';
+import { TodoState } from '../../types/TodoState';
 
 const ADD_TODO = 'ADD_TODO';
 const REMOVE_TODO = 'REMOVE_TODO';
-
-type TodoState = {
-  todos: Array<Todo>
-}
 
 interface AddTodoAction {
   type: typeof ADD_TODO,
