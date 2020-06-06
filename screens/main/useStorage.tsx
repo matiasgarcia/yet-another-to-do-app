@@ -1,20 +1,9 @@
-import { AsyncStorage } from 'react-native';
+import { useEffect } from 'react';
+import { TodoState } from '../../types/TodoState';
+import { storeData } from '../../utils/storage';
 
-const KEY_PREFIX = '@YET_ANOTHER_TO_DO_APP';
-
-const buildKey = (key: string): string => `${KEY_PREFIX}:${key}`;
-function todoStateKey(): string {
-  return buildKey('TODO_STATE');
-}
-
-const storeData = async (value: object) => {
-  await AsyncStorage.setItem(todoStateKey(), JSON.stringify(value))
-}
-
-const retrieveData = async (): Promise<object | null> => {
-  const result = await AsyncStorage.getItem(todoStateKey());
-  if (result === null) {
-    return null;
-  }
-  return JSON.parse(result);
+export function useStorage(currentState: TodoState): void {
+  useEffect(() => {
+    storeData(currentState)
+  }, [currentState])
 }
