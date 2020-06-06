@@ -77,7 +77,13 @@ function reducer(state: TodoState, action: TodoAction): TodoState {
   }
 }
 
-export function Main(): JSX.Element {
+interface useTodo {
+  state: TodoState,
+  addTodo: (todoText: string) => void,
+  removeTodo: (todoUuid: string) => void
+}
+
+function useTodoStore(): useTodo {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const addTodo = (todoText: string) => {
@@ -87,6 +93,16 @@ export function Main(): JSX.Element {
   const removeTodo = (todoUuid: string) => {
     dispatch({ type: REMOVE_TODO, payload: { todoUuid } })
   }
+
+  return {
+    state,
+    addTodo,
+    removeTodo
+  }
+}
+
+export function Main(): JSX.Element {
+  const { state, addTodo, removeTodo } = useTodoStore();
 
   return (
     <View>
