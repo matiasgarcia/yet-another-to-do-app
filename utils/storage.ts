@@ -1,4 +1,5 @@
 import { AsyncStorage } from 'react-native';
+import { TodoState } from '../types/TodoState';
 
 const KEY_PREFIX = '@YET_ANOTHER_TO_DO_APP';
 
@@ -11,7 +12,7 @@ export const storeData = async (value: object) => {
   await AsyncStorage.setItem(todoStateKey(), JSON.stringify(value))
 }
 
-export const retrieveData = async (): Promise<object | null> => {
+export const retrieveData = async (): Promise<TodoState | null> => {
   const result = await AsyncStorage.getItem(todoStateKey());
   if (result === null) {
     return null;

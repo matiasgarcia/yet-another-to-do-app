@@ -77,8 +77,8 @@ interface useTodo {
   removeTodo: (todoUuid: string) => void
 }
 
-export function useTodoStore(): useTodo {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export function useTodoStore(preloadedState: object | null): useTodo {
+  const [state, dispatch] = useReducer(reducer, preloadedState || initialState);
 
   const addTodo = (todoText: string) => {
     dispatch({ type: ADD_TODO, payload: { todoText } })
