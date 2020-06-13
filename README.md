@@ -9,5 +9,5 @@ Tasks:
 - [x] Add TODOs
 - [ ] Mark TODO as done
 - [x] Remove TODOs
-- [ ] Persist in storage
+- [x] Persist in storage
 - [ ] Improve UI
